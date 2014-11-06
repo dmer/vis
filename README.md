@@ -4,6 +4,7 @@ This is series of basic data visualizations using Javascript and the D3 libary
 these are based loosely on the bubble pack layout examples by Mike Bostock
 
 Library and Special Collections Data Visualization
+[example online at http://merleaux.net/vis]
 
 These are the humble beginnings of a grander scheme to create a set of visualization-based browsing discovery tools that can be applied to exploration of cultural heritage collections. A d3 bubble pack-style data visualization with a twist, this pulls directly from a database via the associated php script and displays place names derived from a library catalog. The size of bubble corralates to the number of records with that place name. Clicking on the bubble opens a search for that place name in the catalog.
 
