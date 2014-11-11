@@ -1,35 +1,48 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<!--A series of basic data visualizations using Javascript and the D3 libary
-these are based loosely on the bubble pack layout examples by Mike Bostock 
 
-d3 bubble pack-style data visualization with a twist - pulls directly from 
-database via the associated php script - displays place names from a library 
+<title>
+Catalog Visualizations
+</title>
+
+<!--A series of basic data visualizations using Javascript and the D3 libary
+these are based loosely on the bubble pack layout examples by Mike Bostock
+
+d3 bubble pack-style data visualization with a twist - pulls directly from
+database via the associated php script - displays place names from a library
 catalog - size of bubble is based on number of records with that place name.
-Clicking on the bubble opens a search for that place name in the catalog in 
+Clicking on the bubble opens a search for that place name in the catalog in
 a new browser window.
 -->
-<style>
-	text {
-	font: 12px sans-serif;
-	}
-</style>
 
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="vis.css"/>
+<style>
+	body{
+	background: lightgrey;
+	}
+	</style>
 <body>
-  <div id="container" class="container">
-    <header>
+
+<div class="header">
+  <header>
     <h1>Geographic Subjects : number of records</h1>
-    </header>
-    <div id="main" role="main">
-      <div id="view_selection" class="btn-group">
-        <a href="placeQuantSize.html" id="all" class="btn active">By Size</a>
-      </div>
+  </header>
+  <small>Bubbles are links to Catalog Searches*</small>
+</div>
+
+<div class="buttons">
+	<a href="placeQuantSize.html">Geographic sorted by Size</a>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="termsQuant.html">Item Types by Quantities</a>
+	<a href="https://github.com/dmer/vis" style="float: right; padding-right: 40px;">about</a>
+</div>
 
 <!--Begin D3 Script Here -->
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
-var diameter = 1260, //set area or canvas for visualization
+var diameter = 1020, //set area or canvas for visualization
     format = d3.format(",d"),
 	//fooling around with random selections for rgb color
 	red = Math.floor((Math.random() * 255) + 69);
@@ -99,6 +112,6 @@ function classes(root) {
 }
 
 d3.select(self.frameElement).style("height", diameter + "px");
-
 </script>
+<small>*There are inconsistencies between the quantities in this visualization and the search results on the catalog. These are due to a number of factors including inconsistent legacy metadata in the catalog itself and a lack of flexibility in the search string of the url. The next version will use API calls to read accurate quantity information and build more precise search urls.</small>
 </body></html>
