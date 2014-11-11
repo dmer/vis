@@ -1,5 +1,7 @@
 <?php
-// This PHP script runs a query on a database and outputs the result as JSON
+// This PHP script runs a query on a database and outputs the result as JSON. For the purposes of this visualization,
+// data was extracted from the catalog and placed in a stand-alone database. The next version of this work will use
+// API calls to pull both quantity information and JSON data directly from a collection database.
 
 // get database credentials
 include /outsideOfWebDir/dbconfig.php
